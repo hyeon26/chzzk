@@ -1601,7 +1601,7 @@ function updateLiveBadge(isLive, title){
   const badge=document.getElementById('live-badge'), banner=document.getElementById('live-banner');
   badge.className=isLive?'live-badge on':'live-badge off';
   document.getElementById('live-text').textContent='ON AIR';
-  if(isLive){ banner.classList.add('show'); currentLiveTitle=title; document.getElementById('banner-text').textContent=title?`🔴 ${title}`:'🔴 지금 방송 중입니다!'; }
+  if(isLive){ banner.classList.add('show'); document.getElementById('banner-text').textContent=title?`${title}`:'🔴 지금 방송 중입니다!'; }
   else banner.classList.remove('show');
 }
 
