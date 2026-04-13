@@ -1394,7 +1394,7 @@ async function reconnectChat(){
     chatWs.onopen=()=>{
       chatWs.send(JSON.stringify({ver:'2',cmd:100,svcid:'game',cid:chatChannelIdCache,bdy:{uid:null,devType:2001,accTkn:accessToken,auth:'READ'},tid:1}));
       chatSetStatus(true);
-      updateLiveBadge(true, '');
+      updateLiveBadge(true, currentLiveTitle);
       const log=document.getElementById('chat-log');
       const d=document.createElement('div');
       d.style.cssText='color:#10b981;text-align:center;padding:6px;font-size:12px';
@@ -1545,7 +1545,7 @@ window.chatConnect=async()=>{
     chatWs.onopen=async()=>{
       chatWs.send(JSON.stringify({ver:'2',cmd:100,svcid:'game',cid:chatChannelId,bdy:{uid:null,devType:2001,accTkn:finalToken,auth:'READ'},tid:1}));
       chatSetStatus(true);
-      updateLiveBadge(true, '');
+      updateLiveBadge(true, currentLiveTitle);
       const log=document.getElementById('chat-log'); log.innerHTML='';
       const d=document.createElement('div'); d.style.cssText='color:var(--text3);text-align:center;padding:8px;font-size:12px';
       d.textContent=`── 채팅 수집 시작 ${chatSessionStart.toLocaleTimeString()} ──`; log.appendChild(d);
